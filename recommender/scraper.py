@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import re
 
-API_KEY = "6e0b6dd3c2msh413e3d4dfd18ff2p1d8a55jsn000218a5bb11"  # Replace this with your actual key
+API_KEY = ("")  # Replace this with your actual key
 
 # Standard list of tech skills/keywords to look for
 SKILL_KEYWORDS = [
