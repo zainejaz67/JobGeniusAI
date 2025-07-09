@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobGenius AI - Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #f8f9fa;
+        }
+        .glass {
+            background: rgba(255,255,255,0.08);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        .header-logo {
+            font-size: 2.5rem;
+            color: #00e6d0;
+            margin-right: 0.5rem;
+        }
+        .main-title {
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #00e6d0;
+            text-shadow: 0 2px 8px #000a;
+        }
+        .btn-futuristic {
+            background: linear-gradient(90deg, #00e6d0 0%, #3a7bd5 100%);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px #00e6d088;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn-futuristic:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 16px #00e6d0cc;
+            color: #fff;
+        }
+        .btn-outline-futuristic {
+            border: 2px solid #00e6d0;
+            color: #00e6d0;
+            background: transparent;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-outline-futuristic:hover {
+            background: #00e6d0;
+            color: #fff;
+        }
+        .card-futuristic {
+            background: rgba(44,83,100,0.85);
+            border: 1px solid #00e6d0;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 24px #00e6d044;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .card-futuristic:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 32px #00e6d088;
+        }
+        .card-title, .card-subtitle {
+            color: #00e6d0;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #b0e0e6;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .form-label {
+            color: #b0e0e6;
+        }
+        .alert {
+            border-radius: 1rem;
+        }
+        .nav-link {
+            color: #b0e0e6;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #00e6d0;
+        }
+        .nav-link.active {
+            color: #00e6d0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <span class="header-logo"><i class="fa-solid fa-robot"></i></span>
+            <span class="main-title">JobGenius AI</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/search">Search Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-5">
+    <div class="glass p-4 mb-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3 gap-3">
+            <!-- Refresh Jobs button removed for admin-only access -->
+            <form method="post" class="flex-grow-1 ms-md-3">
+                <div class="mb-3">
+                    <label for="skills" class="form-label">Enter your skills (comma-separated):</label>
+                    <input type="text" class="form-control" id="skills" name="skills" placeholder="e.g. Python, ML, SQL" required value="{{ request.form.skills or '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="user_experience" class="form-label">Your Experience (years):</label>
+                    <input type="number" min="0" class="form-control" id="user_experience" name="user_experience" placeholder="e.g. 2" value="{{ request.form.user_experience or '' }}">
+                </div>
+                <button type="submit" class="btn btn-futuristic w-100"><i class="fa-solid fa-magnifying-glass"></i> Find Jobs</button>
+            </form>
+        </div>
+        {% if refreshed %}
+            <div class="alert alert-success"><i class="fa-solid fa-circle-check"></i> Job data refreshed! Try searching again.</div>
+        {% endif %}
+        {% if error %}
+            <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i> {{ error }}</div>
+        {% endif %}
+    </div>
+    {% if jobs %}
+        <h3 class="mb-3 text-center" style="color:#00e6d0;">Recommended Jobs{% if user_experience %} for {{ user_experience }} year(s) experience{% endif %}</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for job in jobs %}
+            <div class="col">
+                <div class="card card-futuristic h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa-solid fa-briefcase"></i> {{ job.Title }}</h5>
+                        <h6 class="card-subtitle mb-2"><i class="fa-solid fa-building"></i> {{ job.Company }} &mdash; <i class="fa-solid fa-location-dot"></i> {{ job.Location }}</h6>
+                        <p class="card-text"><strong><i class="fa-solid fa-code"></i> Skills:</strong> {{ job.Skills }}</p>
+                        <p class="card-text"><strong><i class="fa-solid fa-user-graduate"></i> Experience:</strong> {{ job.Experience }}</p>
+                        <p class="card-text"><strong><i class="fa-solid fa-bolt"></i> Highlight:</strong> {{ job.Highlight }}</p>
+                        <p class="card-text"><strong><i class="fa-solid fa-check-double"></i> Matched skills:</strong> <span style="color:#00e6d0;">{{ job.Matched }}</span> ({{ job.NumMatched }} of {{ job.TotalUserSkills }})</p>
+                        <a href="{{ job.Link }}" class="btn btn-outline-futuristic mt-2" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Job</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<div class="footer">
+    <span><i class="fa-solid fa-robot"></i> Powered by JobGenius AI &mdash; 2024</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

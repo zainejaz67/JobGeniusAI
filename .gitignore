@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Data and model files
+data/
+job_embeddings.npy
+scraped_jobs.csv
+
+# Environment variables
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode and editor settings
+.vscode/
+*.swp
+
+# Mac and Linux system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Ollama model cache (if any)
+ollama_cache/ 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobGenius AI - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #f8f9fa;
+        }
+        .glass {
+            background: rgba(255,255,255,0.08);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        .header-logo {
+            font-size: 2.5rem;
+            color: #00e6d0;
+            margin-right: 0.5rem;
+        }
+        .main-title {
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #00e6d0;
+            text-shadow: 0 2px 8px #000a;
+        }
+        .btn-futuristic {
+            background: linear-gradient(90deg, #00e6d0 0%, #3a7bd5 100%);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px #00e6d088;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn-futuristic:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 16px #00e6d0cc;
+            color: #fff;
+        }
+        .btn-outline-futuristic {
+            border: 2px solid #00e6d0;
+            color: #00e6d0;
+            background: transparent;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-outline-futuristic:hover {
+            background: #00e6d0;
+            color: #fff;
+        }
+        .card-futuristic {
+            background: rgba(44,83,100,0.85);
+            border: 1px solid #00e6d0;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 24px #00e6d044;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .card-futuristic:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 32px #00e6d088;
+        }
+        .card-title, .card-subtitle {
+            color: #00e6d0;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #b0e0e6;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .hero-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #00e6d0;
+            margin-bottom: 1rem;
+        }
+        .nav-link {
+            color: #b0e0e6;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #00e6d0;
+        }
+        .nav-link.active {
+            color: #00e6d0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <span class="header-logo"><i class="fa-solid fa-robot"></i></span>
+            <span class="main-title">JobGenius AI</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">Search Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 mb-4" style="color:#00e6d0;">Find Your Dream Tech Job</h1>
+        <p class="lead mb-4">AI-powered job recommendations tailored to your skills and experience</p>
+        <a href="/search" class="btn btn-futuristic btn-lg"><i class="fa-solid fa-rocket"></i> Start Searching</a>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card card-futuristic h-100 text-center">
+                <div class="card-body">
+                    <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h5 class="card-title">AI-Powered Matching</h5>
+                    <p class="card-text">Our advanced AI analyzes your skills and matches you with the perfect job opportunities.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-futuristic h-100 text-center">
+                <div class="card-body">
+                    <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h5 class="card-title">Remote & On-Site</h5>
+                    <p class="card-text">Find jobs from both remote and on-site positions across multiple tech fields.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-futuristic h-100 text-center">
+                <div class="card-body">
+                    <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h5 class="card-title">Experience Matching</h5>
+                    <p class="card-text">Get recommendations based on your experience level and skill requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <span><i class="fa-solid fa-robot"></i> Powered by JobGenius AI &mdash; 2024</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobGenius AI - Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #f8f9fa;
+        }
+        .glass {
+            background: rgba(255,255,255,0.08);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        .header-logo {
+            font-size: 2.5rem;
+            color: #00e6d0;
+            margin-right: 0.5rem;
+        }
+        .main-title {
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #00e6d0;
+            text-shadow: 0 2px 8px #000a;
+        }
+        .btn-futuristic {
+            background: linear-gradient(90deg, #00e6d0 0%, #3a7bd5 100%);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px #00e6d088;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn-futuristic:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 16px #00e6d0cc;
+            color: #fff;
+        }
+        .btn-outline-futuristic {
+            border: 2px solid #00e6d0;
+            color: #00e6d0;
+            background: transparent;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-outline-futuristic:hover {
+            background: #00e6d0;
+            color: #fff;
+        }
+        .card-futuristic {
+            background: rgba(44,83,100,0.85);
+            border: 1px solid #00e6d0;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 24px #00e6d044;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .card-futuristic:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 32px #00e6d088;
+        }
+        .card-title, .card-subtitle {
+            color: #00e6d0;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #b0e0e6;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #00e6d0;
+            margin-bottom: 1rem;
+        }
+        .nav-link {
+            color: #b0e0e6;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #00e6d0;
+        }
+        .nav-link.active {
+            color: #00e6d0;
+        }
+        .contact-icon {
+            font-size: 2rem;
+            color: #00e6d0;
+            margin-bottom: 1rem;
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            color: #00e6d0;
+            margin: 0 0.5rem;
+            transition: transform 0.2s;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #fff;
+        }
+        .form-control {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+        }
+        .form-control:focus {
+            background: rgba(255,255,255,0.15);
+            border-color: #00e6d0;
+            color: #fff;
+            box-shadow: 0 0 0 0.2rem rgba(0,230,208,0.25);
+        }
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <span class="header-logo"><i class="fa-solid fa-robot"></i></span>
+            <span class="main-title">JobGenius AI</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">Search Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 mb-4" style="color:#00e6d0;">Get In Touch</h1>
+        <p class="lead">We'd love to hear from you! Reach out to us for any questions or feedback.</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card card-futuristic h-100 text-center">
+                <div class="card-body">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h5 class="card-title">Email Us</h5>
+                    <p class="card-text">support@jobgeniusai.com</p>
+                    <p class="card-text">We'll respond within 24 hours</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-futuristic h-100 text-center">
+                <div class="card-body">
+                    <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h5 class="card-title">Business Hours</h5>
+                    <p class="card-text">Monday - Friday</p>
+                    <p class="card-text">9:00 AM - 6:00 PM EST</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-futuristic h-100 text-center">
+                <div class="card-body">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h5 class="card-title">Location</h5>
+                    <p class="card-text">Remote Team</p>
+                    <p class="card-text">Global Operations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card card-futuristic">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa-solid fa-paper-plane"></i> Send us a Message</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="What's this about?" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Tell us more..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-futuristic w-100"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-futuristic h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa-solid fa-info-circle"></i> Quick Information</h5>
+                    <div class="mb-4">
+                        <h6 style="color:#00e6d0;">Frequently Asked Questions</h6>
+                        <ul>
+                            <li>How does the AI matching work?</li>
+                            <li>How often is job data updated?</li>
+                            <li>Can I save my job preferences?</li>
+                            <li>Is my data secure?</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h6 style="color:#00e6d0;">Follow Us</h6>
+                        <div class="text-center">
+                            <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 style="color:#00e6d0;">Newsletter</h6>
+                        <p>Stay updated with the latest job opportunities and AI insights.</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-outline-futuristic" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <span><i class="fa-solid fa-robot"></i> Powered by JobGenius AI &mdash; 2024</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
