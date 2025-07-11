@@ -1,0 +1,12 @@
+# Ignore HTML, CSS, and JS in language statistics
+*.html linguist-vendored
+*.css linguist-vendored
+*.js linguist-vendored
+
+# Explicitly mark Python and Jupyter notebooks as detectable
+*.py linguist-detectable=true
+*.ipynb linguist-detectable=true
+
+# Optional: Ignore static frontend libraries (if you have them)
+static/** linguist-vendored
+public/** linguist-vendored
